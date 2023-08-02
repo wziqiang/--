@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #container {
+    width: 80%;
+    height: 600px;
+    border: 1px red solid;
+    position: relative;
+    margin: 20px auto;
+    cursor: pointer;
+    background: black;
+  }
+
+  .fire {
+    background: red;
+    position: absolute;
+    /* 设置bottom时,top获取为最大值,减去鼠标点击位置 */
+    bottom: 0px;
+    width: 6px;
+    height: 6px;
+
+  }
+
+  .small-fire {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+  }
+</style>
+
+<body>
+  <div id="container">
+
+  </div>
+  <script>
+    // 1 给div绑定点击事件
+    function Fire() {
+      this.con = document.getElementById('container');
+      this.con.onclick = this.conClickFn.bind(this);
+    }
+
+    // 2 页面点击函数
+    Fire.prototype.conClickFn = function (eve) {
+      //console.log(eve);
+      // 3 获取相对于元素的坐标
+      this.offX = eve.offsetX;
+      this.offY = eve.offsetY;
+      //console.log(this);
+      this.bigFire();
+    }
+
+    // 4 声明大烟花
+    Fire.prototype.bigFire = function () {
+      // 4-1 生成div,且追加类
+      let bigDiv = document.createElement('div');
+      bigDiv.className = 'fire';
+      //4-2 设置left值
+      bigDiv.style.left = this.offX + 'px';
+      // 4-3 随机颜色
+      bigDiv.style.background = this.getColor();
+      // 4-4 div追加到页面中
+      this.con.appendChild(bigDiv)
+
+      // 4-5 让大烟花运动到,鼠标点击的top值
+      this.move(bigDiv, { top: this.offY }, function () {
+        //  console.log('完了...');
+        // 清除大烟花
+        bigDiv.remove();
+        // 调用小烟花
+        this.smallFire();
+        //console.log(this);
+
+      }.bind(this))
+    }
+    // 5 小烟花的生成
+    Fire.prototype.smallFire = function () {
+      // 5-1 小烟花个数
+      var num = 50;
+      for (let i = 0; i < num; i++) {
+        let smallDiv = document.createElement('div');
+        // 5-2 设置样式
+        smallDiv.className = 'small-fire';
+        smallDiv.style.left = this.offX + 'px';
+        smallDiv.style.top = this.offY + 'px';
+        smallDiv.style.background = this.getColor();
+        // 5-3 追加到页面中
+        this.con.appendChild(smallDiv);
+        // 5-4 随机出重点的left和top值
+        let endLeft = this.rand(0, this.con.clientWidth - smallDiv.offsetWidth);
+
+        // 让烟花的top值小于鼠标点击的位置
+        let endTop = this.rand(0, this.offY);
+
+        // 5-5 调用运动函数
+        this.move(smallDiv, { left: endLeft, top: endTop }, function () {
+          //console.log('完了...');
+          smallDiv.remove();
+
+        })
+      }
+
+    }
+
+    // 随机数
+    Fire.prototype.rand = function (min, max) {
+      return Math.round(Math.random() * (max - min) + min)
+    }
+    // 随机颜色
+    Fire.prototype.getColor = function () {
+      var c = '#';
+      for (var i = 0; i < 6; i++) {
+        c += this.rand(0, 15).toString(16)
+      }
+      return c;
+    }
+
+    // 运动函数
+    //   var times = '';
+    Fire.prototype.move = function (ele, taObj, cb) {
+      clearInterval(ele.times);
+      let that = this;
+      ele.times = setInterval(function () {
+        // 设置清除定时器的开关
+        var onOff = false;
+        // 遍历运动的属性
+        for (let attr in taObj) {
+          //  console.log(attr);
+          // 获取元素的实时的运动属性值
+          let tmpPos = parseInt(that.getPos(ele, attr));
+          // 计算speed
+          let speed = (taObj[attr] - tmpPos) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          // 将运动属性进行更新
+          ele.style[attr] = tmpPos + speed + 'px';
+          // console.log(tmpPos + speed, taObj[attr]);
+          //判断是否达到目标值
+          if ((tmpPos + speed) == taObj[attr]) {
+            onOff = true;
+          }
+        }
+  
+        // 判断开关
+        if (onOff) {
+
+          //  console.log(times, 222);
+          clearInterval(ele.times);
+
+          // 回调函数存在,就调用
+          cb && cb();
+        }
+      }, 30)
+      //console.log(times, 111);
+
+    }
+
+    // 获取元素的实时位置的函数
+    Fire.prototype.getPos = function (obj, attr) {
+      if (obj.currentStyle) {   // 获取css的样式
+        return obj.currentStyle[attr];
+      } else {
+        return getComputedStyle(obj)[attr]
+      }
+    }
+
+
+    new Fire();
+
+  </script>
+</body>
+
+</html>

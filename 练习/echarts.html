@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+    <script src="echarts.js"></script>
+    <link rel="icon" href="./packtest/src/img/1.jpg" />
+</head>
+
+<body>
+    <div id="myCharts" style="width: 600px;height:400px;  background: #031a46;"></div>
+    <button onclick="myChartapp(datalists)">有值</button>
+    <button onclick="myChartapp()">无值</button>
+    <button onclick="printdata()">打印</button>
+
+
+    <script type="text/javascript">
+        var datalists = [{
+            name: '你干嘛',
+            listy: [502.84, 205.97, 332.79, 281.55, 398.35, 214.02]
+        },
+        {
+            name: '我就看看',
+            listy: [202.84, 305.97, 232.79, 381.55, 298.35, 514.02]
+        }
+        ]
+        function myChartapp(datalist) {
+            var myChart = echarts.init(document.getElementById('myCharts'));
+            let series = []
+            if (datalist) {
+                datalist.forEach((element) => {
+                    let obj = {
+
+                        name: element.name,
+                        type: 'line',
+                        smooth: true, //是否平滑
+                        symbol: 'none',
+                        symbolSize: 0,
+                        lineStyle: {
+                            normal: {
+                                // color: '#086696',
+                                width: 1,
+                            },
+                        },
+                        itemStyle: {
+                            color: '#086696',
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            normal: {
+                                color: '#086696',
+                            },
+                        },
+                        data: element.listy,
+                    }
+                    series.push(obj)
+                })
+            } else {
+
+                series = [
+                    {
+                        name: '暂无数据',
+                        type: 'line',
+                        smooth: true, //是否平滑
+                        symbol: 'none',
+                        symbolSize: 0,
+                        lineStyle: {
+                            normal: {
+                                // color: '#086696',
+                                width: 1,
+                            },
+                        },
+                        itemStyle: {
+                            color: '#086696',
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            normal: {
+                                color: '#086696',
+                            },
+                        },
+                        data: [],
+                    },
+                ]
+            }
+            var option = {
+                // backgroundColor: '#080b30',
+                legend: {
+                    icon: 'circle',
+                    itemWidth: 10,
+                    itemHeight: 10,
+                    left: 'center',
+                    show: true,
+                    bottom: 0,
+                    top: 10,
+                    orient: 'horizontal',
+                    textStyle: {
+                        color: '#FFF', // 图例文本颜色
+                        fontFamily: 'Microsoft YaHei',
+                        fontSize: 12,
+                    },
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    position: function (point, params, dom, rect, size) {
+                        return [point[0] - dom.offsetWidth / 2, point[1] - dom.offsetHeight]
+                    },
+                    axisPointer: {
+                        type: 'none',
+                    },
+                    formatter: function (a) {
+                        console.log(a)
+                        var showHtml = a[0].axisValue + '<br/>'
+                        for (let i = 0; i < a.length; i++) {
+                            if (i !== 0) showHtml += '<br/>'
+                            showHtml += a[i].seriesName + ':' + a[i].value
+                        }
+                        return showHtml
+                    },
+                },
+                grid: {
+                    top: '25%',
+                    left: '5%',
+                    right: '18%',
+                    bottom: '15%',
+                    // containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#53E4EE',
+                            },
+                        },
+                        splitArea: {
+                            // show: true,
+                            color: '#f00',
+                            lineStyle: {
+                                color: '#f00',
+                            },
+                        },
+                        axisLabel: {
+                            color: '#53E4EE',
+                        },
+                        splitLine: {
+                            show: false,
+                        },
+                        boundaryGap: false,
+                        // data: xaxisField||[],
+                        data: ['A', 'B', 'C', 'D', 'E', 'F']
+                    },
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: 'mA',
+                        nameTextStyle: {
+                            color: '#53E4EE',
+                            fontSize: 12,
+                        },
+                        min: 0,
+                        // max: 140,
+                        splitNumber: 6,
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#03214D',
+                            },
+                        },
+                        axisLine: {
+                            show: false,
+                        },
+                        axisLabel: {
+                            show: true,
+                            margin: 20,
+                            textStyle: {
+                                color: '#53E4EE',
+                            },
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                    },
+                ],
+                series: series,
+            }
+
+            // 指定图表的配置项和数据
+
+            console.log(series);
+            console.log(option);
+            myChart.setOption(option, true)
+        }
+        // myChartapp()
+        function printdata() {
+        //     //（1）首先获得元素的html内容（这里建议如果有样式最好是用内联样式的方式）
+        //     var newstr = document.getElementById(myDiv).innerHTML;//得到需要打印的元素HTML
+
+        //     //（2）保存当前页面的整个html，因为window.print()打印操作是打印当前页的所有内容，所以先将当前页面保存起来，之后便于恢复。
+        //     var oldstr = document.body.innerHTML;//保存当前页面的HTML
+
+        //     //（3）把当前页面替换为打印内容HTML
+        //     document.body.innerHTML = newstr;
+
+            //（4）执行打印操作
+            window.print();
+
+            //（5）还原当前页面
+            // document.body.innerHTML = oldstr;
+        }
+    </script>
+</body>
+
+</html>
+
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+
+    }
+</style>

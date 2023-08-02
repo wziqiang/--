@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./a.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #00a8ff;
+        }
+        .xiaoshuidi{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50px;
+            left: 30%;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 49% 51% 61% 39% / 47% 25% 75% 53% ;
+            animation: actionxiao 3s linear infinite alternate;
+        }
+        .xiaoshuiditwo{
+            content: '';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 80px;
+            left: 29%;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 29% 71% 32% 68% / 47% 25% 75% 53%  ;
+            animation: actionxiaotwo 3s linear infinite alternate;
+        }
+        .shuidi{
+            position: relative;
+            margin-top: 50px;
+            width: 300px;
+            height: 300px;
+            /* border: 1px solid #fff; */
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+            box-shadow: inset 10px 20px 30px rgba(0,0,0,0.5),
+                              10px 10px 20px rgba(0,0,0,0.3),
+                              10px 15px 30px rgba(0,0,0,0.5),
+                        inset -10px -10px 15px rgba(255,255,255,0.8);
+            animation: action 3s linear infinite alternate;
+        }
+        /* .shuidi::after{
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 240px;
+            left: 48%;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 49% 51% 61% 39% / 47% 25% 75% 53% ;
+        }
+        .shuidi::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 265px;
+            left: 47%;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 29% 71% 32% 68% / 47% 25% 75% 53%  ;
+        } */
+        @keyframes action{
+            25%{
+                border-radius: 48% 52% 71% 29% / 47% 31% 69% 53% ;
+            }
+            50%{
+                border-radius: 31% 69% 62% 38% / 56% 31% 69% 44% ;
+            }
+            100%{
+                border-radius: 43% 57% 78% 22% / 21% 66% 34% 79%  ;
+            }
+        }
+        @keyframes actionxiao{
+            25%{
+                border-radius: 48% 52% 71% 29% / 47% 31% 69% 53% ;
+                top: 55px;
+            left: 31%;
+            }
+            50%{
+                border-radius: 31% 69% 62% 38% / 56% 31% 69% 44% ;
+                top: 60px;
+            left: 32%;
+            }
+            100%{
+                border-radius: 43% 57% 78% 22% / 21% 66% 34% 79%  ;
+                top: 55px;
+            left: 31%;
+            }
+        }
+
+        @keyframes actionxiaotwo{
+            25%{
+                border-radius: 48% 52% 71% 29% / 47% 31% 69% 53% ;
+                top: 85px;
+            left: 30%;
+            }
+            50%{
+                border-radius: 31% 69% 62% 38% / 56% 31% 69% 44% ;
+                top: 90px;
+            left: 31%;
+            }
+            100%{
+                border-radius: 43% 57% 78% 22% / 21% 66% 34% 79%  ;
+                top: 85px;
+            left: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shuidi">
+        <div class="xiaoshuidi"></div>
+        <div class="xiaoshuiditwo"></div>
+    </div>
+</body>
+</html>

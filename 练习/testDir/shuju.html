@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<style>
+    div {
+        margin: 30px;
+    }
+</style>
+
+<body>
+    <div id="app" style="display: flex;">
+        <div>
+            <div>
+                <button @click="SDI8_1Time">SDI8_1</button><button>{{SDI8_1copy}}次</button>
+            </div>
+            <div>
+                <button @click="SDP9041_1Time">SDP9041_1</button><button>{{SDP9041_1copy}}次</button>
+            </div>
+
+            <div>
+                <button @click="NDM5E_1Time">NDM5E_1</button><button>{{NDM5E_1copy}}次</button>
+            </div>
+            <div>
+                <button @click="ATC600_1Time">ATC600_1</button><button>{{ATC600_1copy}}次</button>
+            </div>
+
+            <div>
+                <button @click="equTime('equ_1')">温湿度</button><button>{{equ_1copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_2')">烟感</button><button>{{equ_2copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_3')">水浸</button><button>{{equ_3copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_4')">门禁</button><button>{{equ_4copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_5')">噪声</button><button>{{equ_5copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_6')">局部</button><button>{{equ_6copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_7')">粉尘</button><button>{{equ_7copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_8')">六氟化硫气体</button><button>{{equ_8copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_9')">含氧量监测</button><button>{{equ_9copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_10')">水位</button><button>{{equ_10copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_11')">二氧化碳监测</button><button>{{equ_11copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_12')">equ_12漏电监测设备</button><button>{{equ_12copy}}次</button>
+            </div>
+            <div>
+                <button @click="equTime('equ_13')">equ_13</button><button>{{equ_13copy}}次</button>
+            </div>
+            
+            <div>
+                <button @click="equTime('equ_15')">equ_15</button><button>{{equ_15copy}}次</button>
+            </div>
+                        
+            <div>
+                <button @click="equTime('equ_16')">equ_16门禁</button><button>{{equ_16copy}}次</button>
+            </div>
+        </div>
+
+        <textarea style="width: 100%;height: 600px;" name="">{{text}}</textarea>
+    </div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    equ_1copy: 0,
+                    equ_2copy: 0,
+                    equ_3copy: 0,
+                    equ_4copy: 0,
+                    equ_5copy: 0,
+                    equ_6copy: 0,
+                    equ_7copy: 0,
+                    equ_8copy: 0,
+                    equ_9copy: 0,
+                    equ_10copy: 0,
+                    equ_11copy: 0,
+                    equ_12copy:0,
+                    equ_13copy:0,
+                    equ_15copy:0,
+                    equ_16copy:0,
+                    SDI8_1copy: 0,
+                    SDP9041_1copy: 0,
+                    NDM5E_1copy: 0,
+                    ATC600_1copy: 0,
+                    message: 'Hello Vue!',
+                    timer: null,
+                    text: ''
+                }
+            },
+            methods: {
+                equTime(data) {
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        this[data]()
+                    }, 300)
+                },
+                SDI8_1Time() {
+                    console.log(!this.timer);
+                    //节流
+                    // if (!this.timer) {
+                    //     this.SDI8_1()
+                    //     this.timer = setTimeout(() => {
+                    //         // 完结时，将time改为null
+                    //         this.timer = null;
+                    //     }, 500);
+                    // }
+
+                    //防抖
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        this.SDI8_1()
+                    }, 300)
+                },
+                SDP9041_1Time() {
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        this.SDP9041_1()
+                    }, 300)
+                },
+                NDM5E_1Time() {
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        this.NDM5E_1()
+                    }, 300)
+                },
+                ATC600_1Time() {
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        this.ATC600_1()
+                    }, 300)
+                },
+                gitTime() {
+                    return Date.parse(new Date());
+                },
+                copytext(text) {
+                    this.text = text
+                    var textareaC = document.createElement('textarea');
+                    textareaC.setAttribute('readonly', 'readonly'); //设置只读属性防止手机上弹出软键盘 
+                    textareaC.value = text;
+                    document.body.appendChild(textareaC); //将textarea添加为body子元素
+                    textareaC.select();
+                    var res = document.execCommand('copy');
+                    document.body.removeChild(textareaC); //移除DOM元素
+                    return res;
+                },
+                equ_1() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_1",
+    "TS": ${this.gitTime()},
+    "P": {
+        "wendu1": "${shujuDouble()}",
+        "shidu1":  "${shujuDouble()}"
+    
+    }
+}`
+                    this.equ_1copy++
+                    this.copytext(a)
+                },
+                equ_2() {
+                    var shurArr = ['无烟', '有烟']
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+                    let a =
+                        `{
+    "DId": "equ_2",
+    "TS": ${this.gitTime()},
+    "P": {
+        "yanwu1": "${shujuArr()}",
+        "yanwu2":"${shujuArr()}",
+        "yanwu3": "${shujuArr()}",
+        "yanwu4": "${shujuArr()}"
+    
+    }
+}`
+                    this.equ_2copy++
+                    this.copytext(a)
+                },
+
+                equ_3() {
+                    var shurArr = ['正常', '异常']
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+                    let a =
+                        `{
+    "DId": "equ_3",
+    "TS": ${this.gitTime()},
+    "P": {
+        "shuijin1":"${shujuArr()}",
+        "shuijin": "${shujuArr()}"
+    
+    }
+}`
+                    this.equ_3copy++
+                    this.copytext(a)
+                },
+                equ_4() {
+                    var shurArr = ['关门', '开门']
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+                    let a =
+                        `{
+    "DId": "equ_4",
+    "TS": ${this.gitTime()},
+    "P": {
+        "men1":"${shujuArr()}",
+        "men2":"${shujuArr()}"
+    
+    }
+}`
+                    this.equ_4copy++
+                    this.copytext(a)
+                },
+                equ_5() {
+                    function shuju() {
+                        return parseInt(Math.random() * (200 - 1) + 0);
+                    }
+                    let a =
+                        `{
+    "DId": "equ_5",
+    "TS": ${this.gitTime()},
+    "P": {
+        "zaosheng":${shuju()}
+    }
+}`
+                    this.equ_5copy++
+                    this.copytext(a)
+                },
+                equ_6() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_6",
+    "TS": ${this.gitTime()},
+    "P": {
+        "jubufangdian":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_6copy++
+                    this.copytext(a)
+                },
+                equ_7() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_7",
+    "TS": ${this.gitTime()},
+    "P": {
+        "fencheng":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_7copy++
+                    this.copytext(a)
+                },
+
+                equ_8() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_8",
+    "TS": ${this.gitTime()},
+    "P": {
+        "liufuhualiuqiti":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_8copy++
+                    this.copytext(a)
+                },
+                equ_9() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_9",
+    "TS": ${this.gitTime()},
+    "P": {
+        "eryanghuatan":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_9copy++
+                    this.copytext(a)
+                },
+                equ_10() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_10",
+    "TS": ${this.gitTime()},
+    "P": {
+        "shuiwei":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_10copy++
+                    this.copytext(a)
+                },
+                equ_11() {
+                    function shujuDouble() {
+                        return (Math.random() * (100 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_11",
+    "TS": ${this.gitTime()},
+    "P": {
+        "eryanghuatan2":${shujuDouble()}
+    
+    }
+}`
+                    this.equ_11copy++
+                    this.copytext(a)
+                },
+                equ_12(){
+                    function shujuInt(shu) {
+                        if (shu) {
+                            return parseInt(Math.random() * shu)
+                        }
+                        return parseInt(Math.random() * (100 - 1) + 0);
+                    }
+                    let a =
+                        `{
+    "DId": "equ_12",
+    "TS": ${this.gitTime()},
+    "P": {
+        "ldl_power":${shujuInt()}
+    
+    }
+}`
+                    this.equ_12copy++
+                    this.copytext(a)
+                },
+                equ_13(){
+                    function shujuInt(shu) {
+                        if (shu) {
+                            return parseInt(Math.random() * shu)
+                        }
+                        return parseInt(Math.random() * (100 - 1) + 0);
+                    }
+                    let a =
+                        `{
+    "DId": "equ_13",
+    "TS": ${this.gitTime()},
+    "P": {
+        "ldl_power":${shujuInt()}
+    
+    }
+}`
+                    this.equ_13copy++
+                    this.copytext(a)
+                },
+                equ_15() {
+                    function shuju() {
+                        return parseInt(Math.random() * (200 - 1) + 0);
+                    }
+                    function shujuDouble() {
+                        return (Math.random() * (200 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "equ_15",
+    "TS": ${this.gitTime()},
+    "P": {
+        "DI_1": ${shuju()},
+        "DI_2":  ${shuju()},
+        "DI_4":  ${shuju()},
+        "EPim_S":  ${shuju()},
+        "EPex_S":  ${shuju()},
+        "EQim_S":  ${shuju()},
+        "EQex_S":  ${shuju()},
+        "EPim_P":  ${shuju()},
+        "EPex_P":  ${shuju()},
+        "EQim_P":  ${shuju()},
+        "EQex_P":  ${shuju()},
+        "EPim_V":  ${shuju()},
+        "EPex_V":  ${shuju()},
+        "EQim_V":  ${shuju()},
+        "EQex_V":  ${shuju()},
+        "EPim_F":  ${shuju()},
+        "EPex_F":  ${shuju()},
+        "EQim_F":  ${shuju()},
+        "EQex_F":  ${shuju()},
+        "EPim_T":  ${shuju()},
+        "EPex_T":  ${shuju()},
+        "EQim_T":  ${shuju()},
+        "EQex_T":  ${shuju()},
+        "F":  ${shujuDouble()},
+        "UA":  ${shujuDouble()},
+        "UB":  ${shujuDouble()},
+        "UC":  ${shujuDouble()},
+        "UAB":  ${shujuDouble()},
+        "UBC":  ${shujuDouble()},
+        "UCA":  ${shujuDouble()},
+        "IA":  ${shujuDouble()},
+        "IB":  ${shujuDouble()},
+        "IC":  ${shujuDouble()},
+        "PA":  ${shujuDouble()},
+        "PB":  ${shujuDouble()},
+        "PC":  ${shujuDouble()},
+        "Psum":  ${shujuDouble()},
+        "QA":  ${shujuDouble()},
+        "QB":  ${shujuDouble()},
+        "QC":  ${shujuDouble()},
+        "Qsum":  ${shujuDouble()},
+        "Ssum":  ${shujuDouble()},
+        "PF":  ${shujuDouble()},
+        "EU":  ${shujuDouble()},
+        "EA":  ${shujuDouble()},
+        "PD":  ${shujuDouble()},
+        "QD":  ${shujuDouble()},
+        "SD":  ${shujuDouble()},
+        "THD_V":  ${shuju()},
+        "THD_I":  ${shuju()},
+        "LC_1":  ${shuju()},
+        "LC_2":  ${shuju()},
+        "LC_3":  ${shuju()},
+        "LC_4":  ${shuju()},
+        "LC_5":  ${shuju()},
+        "LC_6":  ${shuju()},
+        "xlwda":${shujuDouble()},
+        "xlwdb":${shujuDouble()}
+    }
+}`
+                    this.equ_15copy++
+                    this.copytext(a)
+
+                },
+                equ_16(){
+                    var shurArr = ['正常', '异常']
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+                    let a =
+                        `{
+    "DId": "equ_16",
+    "TS": ${this.gitTime()},
+    "P": {
+        "shuijin1":"${shujuArr()}",
+        "shuijin": "${shujuArr()}"
+    
+    }
+}`
+                    this.equ_16copy++
+                    this.copytext(a)
+                },
+                SDI8_1() {
+                    function shuju() {
+                        return parseInt(Math.random() * (200 - 1) + 0);
+                    }
+                    function shujuDouble() {
+                        return (Math.random() * (200 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId": "SDI8_1",
+    "TS": ${this.gitTime()},
+    "P": {
+        "DI_1": ${shuju()},
+        "DI_2":  ${shuju()},
+        "DI_4":  ${shuju()},
+        "EPim_S":  ${shuju()},
+        "EPex_S":  ${shuju()},
+        "EQim_S":  ${shuju()},
+        "EQex_S":  ${shuju()},
+        "EPim_P":  ${shuju()},
+        "EPex_P":  ${shuju()},
+        "EQim_P":  ${shuju()},
+        "EQex_P":  ${shuju()},
+        "EPim_V":  ${shuju()},
+        "EPex_V":  ${shuju()},
+        "EQim_V":  ${shuju()},
+        "EQex_V":  ${shuju()},
+        "EPim_F":  ${shuju()},
+        "EPex_F":  ${shuju()},
+        "EQim_F":  ${shuju()},
+        "EQex_F":  ${shuju()},
+        "EPim_T":  ${shuju()},
+        "EPex_T":  ${shuju()},
+        "EQim_T":  ${shuju()},
+        "EQex_T":  ${shuju()},
+        "F":  ${shujuDouble()},
+        "UA":  ${shujuDouble()},
+        "UB":  ${shujuDouble()},
+        "UC":  ${shujuDouble()},
+        "UAB":  ${shujuDouble()},
+        "UBC":  ${shujuDouble()},
+        "UCA":  ${shujuDouble()},
+        "IA":  ${shujuDouble()},
+        "IB":  ${shujuDouble()},
+        "IC":  ${shujuDouble()},
+        "PA":  ${shujuDouble()},
+        "PB":  ${shujuDouble()},
+        "PC":  ${shujuDouble()},
+        "Psum":  ${shujuDouble()},
+        "QA":  ${shujuDouble()},
+        "QB":  ${shujuDouble()},
+        "QC":  ${shujuDouble()},
+        "Qsum":  ${shujuDouble()},
+        "Ssum":  ${shujuDouble()},
+        "PF":  ${shujuDouble()},
+        "EU":  ${shujuDouble()},
+        "EA":  ${shujuDouble()},
+        "PD":  ${shujuDouble()},
+        "QD":  ${shujuDouble()},
+        "SD":  ${shujuDouble()},
+        "THD_V":  ${shuju()},
+        "THD_I":  ${shuju()},
+        "LC_1":  ${shuju()},
+        "LC_2":  ${shuju()},
+        "LC_3":  ${shuju()},
+        "LC_4":  ${shuju()},
+        "LC_5":  ${shuju()},
+        "LC_6":  ${shuju()},
+        "xlwda":${shujuDouble()},
+        "xlwdb":${shujuDouble()}
+    }
+}`
+                    this.SDI8_1copy++
+                    this.copytext(a)
+
+                },
+                SDP9041_1() {
+                    function shuju() {
+                        return (Math.random() * (200 - 1) + 0).toFixed(1)
+                    }
+                    let a =
+                        `{
+    "DId":"SDP9041_1",
+    "TS":${this.gitTime()},
+    "P":{
+    "F": ${shuju()},
+    "IA": ${shuju()},
+    "IB": ${shuju()},
+    "IC": ${shuju()},
+    "UAB": ${shuju()},
+    "UBC": ${shuju()},
+    "UCA": ${shuju()},
+    "Psum": ${shuju()},
+    "Qsum": ${shuju()},
+    "Ssum": ${shuju()},
+    "UA": ${shuju()},
+    "UB": ${shuju()},
+    "UC": ${shuju()},
+    "3Uo": ${shuju()},
+    "Uo_3": ${shuju()},
+    "Ux": ${shuju()},
+    "zl1": ${shuju()},
+    "zl2": ${shuju()}
+    }
+} `
+                    this.SDP9041_1copy++
+                    this.copytext(a)
+
+                },
+                NDM5E_1() {
+                    function shujuInt(shu) {
+                        if (shu) {
+                            return parseInt(Math.random() * shu)
+                        }
+                        return parseInt(Math.random() * (200 - 1) + 0);
+                    }
+                    var shurArr = [0, 1]
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+
+                    let a =
+                        `{
+    "DId":"NDM5E_1",
+    "TS":${this.gitTime()},
+    "P":{
+    "CMOCF_DO1":${shujuArr([0, 1, 2, 3, 4, 5, 6, 7])},
+    "CMOCF_DO2":${shujuArr([0, 1, 2, 3, 4, 5, 6, 7])},
+    "CMOCF_DO3":${shujuArr([0, 1, 2, 3, 4, 5, 6, 7])},
+    "NOP":${shujuInt(10)},
+    "WCT":${shujuArr()},
+    "SDAL_EE":${shujuArr()},
+    "SDAL_OT":${shujuArr()},
+    "SDAL_NOP":${shujuArr()},
+    "SDAL_WCT":${shujuArr()},
+    "ALS_TF":${shujuArr()},
+    "ALS_OW":${shujuArr()},
+    "ALS_OLD":${shujuArr()},
+    "ALS_SCSD":${shujuArr()},
+    "ALS_SCIST":${shujuArr()},
+    "ALS_GD":${shujuArr()},
+    "ALS_LK":${shujuArr()},
+    "ALS_OV":${shujuArr()},
+    "ALS_UV":${shujuArr()},
+    "ALS_MP":${shujuArr()},
+    "ALS_ZD":${shujuArr()},
+    "ALS_PSQ":${shujuArr()},
+    "ALS_VU":${shujuArr()},
+    "SOP1_T":${shujuArr([11000, 10010, 11110, 11101, 10011, 10001, 10111, 10000])},
+    "SOP1_SB":${shujuArr()},
+    "SOP2_PP":${shujuArr([1, 2])},
+    "SOP2_OMP":${shujuArr([1, 2])},
+    "SOP2_TF":${shujuArr([1, 2])},
+    "SOP2_HVL":${shujuArr([1, 2])},
+    "SOP2_DPF":${shujuArr([1, 2])},
+    "SOP2_CB":${shujuArr([1, 2])},
+    "SOP2_ABALOC/RC":${shujuArr([1, 2])},
+    "SOP2_ABALOC":${shujuArr([1, 2])},
+    "SOP2_SCE":${shujuArr([1, 2])},
+    "SOP2_PWI":${shujuArr([1, 2])},
+    "SOP2_PI":${shujuArr([1, 2])}
+    }
+} `
+                    this.NDM5E_1copy++
+                    this.copytext(a)
+
+                },
+                ATC600_1() {
+                    function shujuDouble() {
+                        // return parseInt(Math.random() * (200 - 1) + 0);
+                        return (Math.random() * (200 - 1) + 0).toFixed(1)
+                    }
+                    function shujuInt() {
+                        return parseInt(Math.random() * (200 - 1) + 0);
+                    }
+                    var shurArr = [0, 1]
+                    function shujuArr(arr) {
+                        if (arr) {
+                            return arr[Math.floor((Math.random() * arr.length))]
+                        }
+                        return shurArr[Math.floor((Math.random() * shurArr.length))]
+
+                    }
+                    let a =
+                        `{
+    "DId":"ATC600_1",
+    "TS":${this.gitTime()},
+    "P":{
+    "ADRCM":1,
+    "BCM":${shujuArr([2400, 4800, 9600, 19200])},
+    "RM":${shujuArr()},
+    "WTRTM":${shujuDouble()},
+    "WTMS_1":${shujuDouble()},
+    "WTMS_2":${shujuDouble()},
+    "WTMS_3":${shujuDouble()},
+    "WTMS_4":${shujuDouble()},
+    "WTMS_5":${shujuDouble()},
+    "WTMS_6":${shujuDouble()},
+    "WTMS_7":${shujuDouble()},
+    "WTMS_8":${shujuDouble()},
+    "WTMS_9":${shujuDouble()},
+    "WTMS_10":${shujuDouble()},
+    "WTMS_11":${shujuDouble()},
+    "WTMS_12":${shujuDouble()},
+    "WTMS_13":${shujuDouble()},
+    "WTMS_14":${shujuDouble()},
+    "WTMS_15":${shujuDouble()},
+    "WTMS_16":${shujuDouble()},
+    "WTMS_17":${shujuDouble()},
+    "WTMS_18":${shujuDouble()},
+    "WTMSADR_1":${shujuInt()},
+    "WTMSADR_2":${shujuInt()},
+    "WTMSADR_3":${shujuInt()},
+    "WTMSADR_4":${shujuInt()},
+    "WTMSADR_5":${shujuInt()},
+    "WTMSADR_6":${shujuInt()},
+    "WTMSADR_7":${shujuInt()},
+    "WTMSADR_8":${shujuInt()},
+    "WTMSADR_9":${shujuInt()},
+    "WTMSADR_10":${shujuInt()},
+    "WTMSADR_11":${shujuInt()},
+    "WTMSADR_12":${shujuInt()},
+    "WTMSADR_13":${shujuInt()},
+    "WTMSADR_14":${shujuInt()},
+    "WTMSADR_15":${shujuInt()},
+    "WTMSADR_16":${shujuInt()},
+    "WTMSADR_17":${shujuInt()},
+    "WTMSADR_18":${shujuInt()},
+    "WTMSOS_1":${shujuArr()},
+    "WTMSOS_2":${shujuArr()},
+    "WTMSOS_3":${shujuArr()},
+    "WTMSOS_4":${shujuArr()},
+    "WTMSOS_5":${shujuArr()},
+    "WTMSOS_6":${shujuArr()},
+    "WTMSOS_7":${shujuArr()},
+    "WTMSOS_8":${shujuArr()},
+    "WTMSOS_9":${shujuArr()},
+    "WTMSOS_10":${shujuArr()},
+    "WTMSOS_11":${shujuArr()},
+    "WTMSOS_12":${shujuArr()},
+    "WTMSOS_13":${shujuArr()},
+    "WTMSOS_14":${shujuArr()},
+    "WTMSOS_15":${shujuArr()},
+    "WTMSOS_16":${shujuArr()},
+    "WTMSOS_17":${shujuArr()},
+    "WTMSOS_18":${shujuArr()},
+    "WTMSBS_1":${shujuArr()},
+    "WTMSBS_2":${shujuArr()},
+    "WTMSBS_3":${shujuArr()},
+    "WTMSBS_4":${shujuArr()},
+    "WTMSBS_5":${shujuArr()},
+    "WTMSBS_6":${shujuArr()},
+    "WTMSBS_7":${shujuArr()},
+    "WTMSBS_8":${shujuArr()},
+    "WTMSBS_9":${shujuArr()},
+    "WTMSBS_10":${shujuArr()},
+    "WTMSBS_11":${shujuArr()},
+    "WTMSBS_12":${shujuArr()},
+    "WTMSBS_13":${shujuArr()},
+    "WTMSBS_14":${shujuArr()},
+    "WTMSBS_15":${shujuArr()},
+    "WTMSBS_16":${shujuArr()},
+    "WTMSBS_17":${shujuArr()},
+    "WTMSBS_18":${shujuArr()}
+    }
+} `
+                    this.ATC600_1copy++
+                    this.copytext(a)
+                }
+            }
+        }).mount('#app')
+        let SDI8_1cishu = 0, SDP9041_1cishu = 0, NDM5E_1cishu = 0, ATC600_1cishu = 0
+
+    </script>
+</body>
+
+</html>

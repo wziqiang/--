@@ -1,0 +1,8 @@
+body{
+    margin: auto 0;
+    width: 50%;
+    height: 50%;
+}
+div{
+    background: red;
+}

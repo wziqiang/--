@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+        width: 300px;
+        height: 300px;
+        background: red;
+        }
+    </style>
+</head>
+<body>
+     <ul>
+         <li>vv</li>
+         <li>dd</li>
+         <li>tt</li>
+         <li>ff</li>
+         <li>aa</li>
+     </ul>
+     <div class="ss" id="ppp  ">ccc</div>
+    <script>
+//    let a=document.getElementsByTagName('li')
+//    console.log(a);
+//    console.dir(a)
+let a= document.getElementsByClassName('ss')
+let c= document.querySelector('.ss')
+console.log(document.body); 
+console.log(document.documentElement);
+c.onclick = function(){
+    alert('aa')
+}
+
+console.log(c.className);
+console.log(c.getAttribute('id'));
+document.addEventListener('selectstart',function(event){
+    event.preventDefault()
+    console.log(event);
+})
+
+document.addEventListener('keyup',function(e) {
+    alert(e.key)
+})
+console.dir( c);
+console.log(c.offsetWidth);
+    </script>
+</body>
+</html>

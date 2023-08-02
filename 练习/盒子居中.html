@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .boxA {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            /* 给父盒子添加flex布局 */
+            display: flex;
+            /* 主轴方向 垂直 从上往下 y轴 */
+            /* flex-direction: column; */
+            /* 主轴居中 */
+            justify-content: center;
+            /* 侧轴居中 */
+            align-items: center;
+        }
+        .boxB {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+            line-height: 90px;
+        }
+
+        /* 二 */
+        .boxc {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            border: 1px solid #000;
+        }
+        .boxd {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-left: 50%;
+            margin-top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* 三 */
+        .boxe {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            /*（relative）给父级盒子设置相对定位 */
+            position: relative;
+        }
+        .boxf {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* （absolute）给子盒子设置绝对定位*/
+            position: absolute;
+            /* 向右、向下移动父盒子的一半 （偏移量） */
+            left: 50%;
+            top: 50%;
+            /* translate若使用百分比，是相对于自身的比例的位移 */
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* 四 */
+        .boxx {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            /*（relative）给父级盒子设置相对定位 */
+            position: relative;
+        }
+        .boxy {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* （absolute）给子盒子设置绝对定位*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*margin负间距 */
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+
+/* 五 */
+        .boxw {
+            display: table-cell;
+            vertical-align: middle;
+            width: 200px;
+            height: 200px;
+            border: 10px solid #000;
+            background-color: #000;
+        }
+        .boxq {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 0 auto;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxA">
+        <div class="boxB">ssss</div>
+    </div>
+    <br>
+    <div class="boxc">
+        <div class="boxd">ssss</div>
+    </div>
+    <br>
+    <div class="boxe">
+        <div class="boxf">ssss</div>
+    </div>
+    <br>
+    <div class="boxx">
+        <div class="boxy">ssss</div>
+    </div>
+    <br>
+    <div class="boxw">
+        <div class="boxq">ssss</div>
+    </div>
+</body>
+
+</html>

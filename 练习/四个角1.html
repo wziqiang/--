@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border-show {
+            border: 1px solid #21a7e1;
+            margin: 50px 100px;
+            border-radius: 3px;
+            position: relative;
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*下面是给四个角框增加效果*/
+        .border-container {
+            z-index: 2500;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: rgba(0, 0, 0, 0);
+            border: 3px solid #1fa5f1;
+        }
+
+        .border-container-left-top {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 3px;
+        }
+
+        .border-container-right-top {
+            top: -2px;
+            right: -2px;
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 3px;
+        }
+
+        .border-container-left-bottom {
+            bottom: -2px;
+            left: -2px;
+            border-right: none;
+            border-top: none;
+            border-bottom-left-radius: 3px;
+        }
+
+        .border-container-right-bottom {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+            border-bottom-right-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border-show">
+        <div class="border-container border-container-left-top"></div>
+        <div class="border-container border-container-right-top"></div>
+        <div class="border-container border-container-left-bottom"></div>
+        <div class="border-container border-container-right-bottom"></div>
+        <el-button type="primary">点击</el-button>
+    </div>
+</body>
+
+</html>

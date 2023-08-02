@@ -1,0 +1,824 @@
+[
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 2
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相有功",
+        "id": "Pa",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_yggl",
+        "hjcsfl": "hjcsfl_yw",
+        "dlcsflSecond": "dlcsfl_yggl_ax"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相有功",
+        "id": "Pb",
+        "dljz": "",
+        "dlcsfl": "dlcsfl_yggl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "C相有功",
+        "id": "Pc",
+        "dljz": "",
+        "dlcsfl": "dlcsfl_yggl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "总有功功率",
+        "id": "P",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_yggl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相电流",
+        "id": "Ia",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相电流",
+        "id": "Ib",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "C相电流",
+        "id": "Ic",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "漏电电流",
+        "id": "Ile",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相电压",
+        "id": "Ua",
+        "dljz": "dksjlx_xdy",
+        "dlcsfl": "dlcsfl_xiangdy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相电压",
+        "id": "Ub",
+        "dljz": "dksjlx_xdy",
+        "dlcsfl": "dlcsfl_xiangdy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "C相电压",
+        "id": "Uc",
+        "dljz": "dksjlx_xdy",
+        "dlcsfl": "dlcsfl_xiangdy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "Uab电压",
+        "id": "Uab",
+        "dljz": "dksjlx_xiandy",
+        "dlcsfl": "dlcsfl_xiandy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "Ubc电压",
+        "id": "Ubc",
+        "dljz": "dksjlx_xiandy",
+        "dlcsfl": "dlcsfl_xiandy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "Uca电压",
+        "id": "Uca",
+        "dljz": "dksjlx_xiandy",
+        "dlcsfl": "dlcsfl_xiandy"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "Fr频率",
+        "id": "Fr",
+        "dljz": "",
+        "dlcsfl": "dlcsfl_pl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "三相电压不平衡度",
+        "id": "UnblaU",
+        "dljz": "dlsjlx_bphd",
+        "dlcsfl": "dlcsfl_bphd"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "负载率",
+        "id": "LoadR",
+        "dljz": "dksjlx_gl",
+        "": "dlcsfl_fzl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相电压总谐波含有率",
+        "id": "THCUa",
+        "dljz": "dlsjlx_dyxb",
+        "dlcsfl": "dlcsfl_dyxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相电压总谐波含有率",
+        "id": "THCUb",
+        "dljz": "dlsjlx_dyxb",
+        "dlcsfl": "dlcsfl_dyxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "C相电压总谐波含有率",
+        "id": "THCUc",
+        "dljz": "dlsjlx_dyxb",
+        "dlcsfl": "dlcsfl_dyxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相电流总谐波含有率",
+        "id": "THCIa",
+        "dljz": "dlsjlx_dlxb",
+        "dlcsfl": "dlcsfl_dlxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相电流总谐波含有率",
+        "id": "THCIb",
+        "dljz": "dlsjlx_dlxb",
+        "dlcsfl": "dlcsfl_dlxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "C相电流总谐波含有率",
+        "id": "THCIc",
+        "dljz": "dlsjlx_dlxb",
+        "dlcsfl": "dlcsfl_dlxb"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "正向有功电度",
+        "id": "FPe",
+        "dljz": "",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "反向有功电度",
+        "id": "RPe",
+        "dljz": "",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "正向无功电度",
+        "id": "FRPe",
+        "dljz": "",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "反向无功电度",
+        "id": "RRPe",
+        "dljz": "",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "平均功率因数",
+        "id": "AVGPf",
+        "dljz": "",
+        "dlcsfl": ""
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "需量",
+        "id": "xl"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "A相功率因数",
+        "Paf": "pa",
+        "dljz": "",
+        "dlcsfl": "dlcsfl_glys",
+        "id": "PFAA"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "B相功率因数",
+        "Pbf": "pa",
+        "dljz": "",
+        "dlcsfl": "dlcsfl_glys",
+        "id": "PFAB"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "总功率因数",
+        "Pf": "pa",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_glys",
+        "id": "PFAT"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "总无功功率",
+        "RP": "pa",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_wggl",
+        "id": "FRPT"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "id": "PAED",
+        "name": "正向有功电度",
+        "dlcsfl": "dlcsfl_degree"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "反向有功电度",
+        "id": "NAED",
+        "dlcsfl": "dlcsfl_degree"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "正向无功电度",
+        "id": "PRED",
+        "dlcsfl": "dlcsfl_degree"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "",
+            "scale": 6
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "反向无功电度",
+        "id": "RRED",
+        "dlcsfl": "dlcsfl_degree"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": "kw",
+            "scale": 2
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "电量",
+        "id": "dl",
+        "dlcsfl": "dlcsfl_dn"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "dlcsfl": "dlcsfl_sj",
+        "name": "水浸",
+        "id": "shuijin"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "烟雾#1",
+        "id": "yanwu1",
+        "dlcsfl": "dlcsfl_yw"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "烟雾#2",
+        "id": "yanwu2",
+        "dlcsfl": "dlcsfl_yw"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "1#门禁",
+        "id": "menjin1",
+        "dlcsfl": "dlcsfl_mj"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "2#门禁",
+        "id": "menjin2",
+        "dlcsfl": "dlcsfl_mj"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "环境温",
+        "id": "huanjingwen",
+        "dlcsfl": "dlcsfl_wsd"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "温度",
+        "id": "wendu",
+        "dlcsfl": "dlcsfl_wsd"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "湿度",
+        "id": "shidu",
+        "dlcsfl": "dlcsfl_wsd"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "dlcsfl": "dlcsfl_wd",
+        "name": "温度b",
+        "id": "wendu_a"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "dlcsfl": "dlcsfl_wd",
+        "name": "温度c",
+        "id": "wendu_c"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "dlcsfl": "dlcsfl_ldl",
+        "name": "漏电流",
+        "id": "ldl"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": "次/count"
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "ab",
+        "id": "ab",
+        "dljz": "dksjlx_xdy",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "float",
+            "unit": "百分比/%",
+            "scale": 3
+        },
+        "expands": {
+            "readOnly": false,
+            "source": "manual"
+        },
+        "name": "erf",
+        "id": "erf",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "long",
+            "unit": "毫米/mm"
+        },
+        "expands": {
+            "readOnly": false,
+            "source": "manual"
+        },
+        "name": "dde",
+        "id": "dde",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_xiangdy"
+    },
+    {
+        "valueType": {
+            "type": "float",
+            "unit": "百分比/%",
+            "scale": 3
+        },
+        "expands": {
+            "readOnly": false,
+            "source": "manual"
+        },
+        "name": "erf34",
+        "id": "erf3",
+        "dljz": "dksjlx_dl",
+        "dlcsfl": "dlcsfl_dl"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": "百分比/%"
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "cs01",
+        "id": "cs01",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_pl"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": "百分比/%"
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "name": "cs012",
+        "id": "cs012",
+        "dljz": "dksjlx_gl",
+        "dlcsfl": "dlcsfl_pl"
+    },
+    {
+        "valueType": {
+            "type": "int",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": ""
+        },
+        "name": "dasd",
+        "id": "das"
+    },
+    {
+        "valueType": {
+            "type": "double",
+            "unit": ""
+        },
+        "expands": {
+            "readOnly": true,
+            "source": "device"
+        },
+        "dlcsfl": "dlcsfl_dl",
+        "hjcsfl": "hjcsfl_jbfd",
+        "name": "aaa",
+        "id": "aaa",
+        "dljz": "dksjlx_gl"
+    }
+]
