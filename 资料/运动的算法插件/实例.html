@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title>Examples</title>
+        <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+            }
+
+            #warp{
+                width: 504px;
+                height: 40px;
+                position: relative;
+                border: 1px solid black;
+                margin: 50px auto;
+            }
+
+            #box{
+                width: 100px;
+                height: 40px;
+                background: blue;
+                text-align: center;
+                font-size: 2em;
+                position: absolute;
+                z-index: 3;
+            }
+
+            #list{
+                position: absolute;
+                z-index: 2;
+            }
+
+            #list li{
+                width: 100px;
+                height: 40px;
+                background: red;
+                text-align: center;
+                font-size: 2em;
+                float: left;
+                border-right: 1px solid black;
+            }
+
+            #list li:last-child{
+                border: hidden;
+            }
+
+        </style>
+
+        <script src="../jquery/jquery-3.1.1.min.js"></script>
+        <script src="../jquery/jquery.easing.min.js"></script>
+        <script type="text/javascript">
+
+            window.onload = function(){
+
+                $("#list li").click(function(){
+
+                    var leftUl = $("#list").offset().left;
+
+                    $("#box").animate({
+                        left : $(this).offset().left - leftUl
+                    },500,"easeOutElastic").html( $(this).html() );
+
+                });
+
+
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div id="warp">
+            <div id="box">1</div>
+            <ul id="list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+    </body>
+</html>

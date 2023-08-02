@@ -1,0 +1,232 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="shortcut icon" href="images/HTML.ico" type="image/x-icon">
+  <title>初级前端面试题</title>
+</head>
+
+<body>
+  <div class="mainpage">
+    <!--LOGO和导航模块-->
+    <div class="header">
+      <div class="logo">
+      </div>
+      <div class="nav">
+        <a href="http://www.w3school.com.cn/html/index.asp" target="_blank">Html</a>
+        <a href="http://www.w3school.com.cn/css/index.asp" target="_blank">Css</a>
+        <a href="http://www.w3school.com.cn/js/index.asp" target="_blank">Javascript</a>
+        <a href="http://www.w3school.com.cn/jquery/index.asp" target="_blank">JQuery</a>
+        <a href="http://www.bootcss.com/" target="_blank">Bootstrap</a>
+      </div>
+    </div>
+    <div class="line"></div>
+    <!--正文模块-->
+    <div class="maincontent">
+      <!--正文标题-->
+      <div class="headline">
+        <h1>
+          初级前端攻城狮html和css面试题
+        </h1>
+      </div>
+      <!--正文内容-->
+      <div class="content">
+        <h1>
+          1.对WEB标准以及W3C的理解与认识
+        </h1>
+        <p>
+          标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外链css和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、改版方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性。
+        </p>
+        <h1>
+          2.什么是Doctype? 常用的声明?
+        </h1>
+        <p>
+          Doctype 是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义(DTD)来解析文档。<br />
+          常用的声明:<br />
+          ①.HTML5：&lt;!DOCTYPE html&gt;;<br />
+          ②.HTML 4.01：&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd"&gt;;<br />
+          ③.XHTML 1.0：&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;;<br />
+        </p>
+        <h1>
+          3.xhtml和html有什么区别
+        </h1>
+        <p>
+          HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言; <br />最主要的不同： <br />
+          ①.XHTML 元素必须被正确地嵌套。 <br />
+          ②.XHTML 元素必须被关闭。 <br />
+          ③.标签名必须用小写字母。 <br />
+          ④.XHTML 文档必须拥有根元素。 <br />
+        </p>
+        <h1>
+          4.行内元素有哪些?块级元素有哪些?CSS的盒模型?
+        </h1>
+        <p>
+          块级元素：div p h1 h2 h3 h4 form ul <br />
+          行内元素: a b br i span input select <br />
+          Css盒模型:内容，border ,margin，padding <br />
+        </p>
+        <h1>
+          5.CSS引入的方式有哪些?
+        </h1>
+        <p>
+          在HTML中引入CSS的方法主要有四种，它们分别是行内式、内嵌式、链接式和导入式。
+          ①.行内式：行内式是在标记的style属性中设定CSS样式。这种方式没有体现出CSS的优势，不推荐使用。 <br />
+          ②.内嵌式：嵌入式是将CSS样式集中写在网页的&lt;head&gt;&lt;/head&gt;标签对的&lt;style&gt;&lt;/style&gt;标签对中。此方式的缺点是对于一个包含很多网页的网站，在每个网页中使用嵌入式，进行修改样式时非常麻烦。单一网页可以考虑使用嵌入式。
+          <br />
+          ③.导入式：将一个独立的.css文件引入HTML文件中，导入式使用CSS规则引入外部CSS文件，&lt;style&gt;标记也是写在&lt;head&gt;标记中。导入式会在整个网页装载完后再装载CSS文件，因此这就导致了一个问题，如果网页比较大则会出现先显示无样式的页面，闪烁一下之后，再出现网页的样式。这是导入式固有的一个缺陷。
+          <br />
+          ④.链接式：链接式也是将一个.css文件引入到HTML文件中，但它与导入式不同的是链接式使用HTML规则引入外部CSS文件，它在网页的&lt;head&gt;&lt;/head&gt;标签对中使用&lt;link&gt;标记来引入外部样式表文件。使用链接式时与导入式不同的是它会以网页文件主体装载前装载CSS文件，因此显示出来的网页从一开始就是带样式的效果的，它不会象导入式那样先显示无样式的网页，然后再显示有样式的网页，这是链接式的优点。
+          <br />
+        </p>
+        <h1>
+          6.link和@import的区别是?
+        </h1>
+        <p>
+          两者都是外部引用CSS的方式，但是存在一定的区别：<br />
+          ①.link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。 <br />
+          ②.link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。 <br />
+          ③.link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。 <br />
+          ④.link支持使用Javascript控制DOM去改变样式；而@import不支持。 <br />
+        </p>
+        <h1>
+          7.CSS选择符有哪些?哪些属性可以继承?优先级算法如何计算?内联和important哪个优先级高?
+        </h1>
+        <p>
+          HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言; <br />最主要的不同： <br />
+          ①.XHTML 元素必须被正确地嵌套。 <br />
+          ②.XHTML 元素必须被关闭。 <br />
+          ③.标签名必须用小写字母。 <br />
+          ④.XHTML 文档必须拥有根元素。 <br />
+        </p>
+        <h1>
+          8.前端页面有哪三层构成，分别是什么?作用是什么?
+        </h1>
+        <p>
+          前端开发由结构层，表现层，行为层三个层次组成。前端开发提倡结构层、表现层、行为层分离。<br />
+          ①.结构层（structural layer）:HTML或XHTML等标记性语言创建了网页的结构层。结构层体现了网页文档中包含哪些标签，有哪些内容。<br />
+          ②.表示层（presentation layer）:Css样式表创建了网页的表现层。表现层就是定义网页文档的外观视觉如何展现。<br />
+          ③.行为层（behaviorlayer）:javascript创建了网页的行为层。行为层定义了网页中的元素具有怎样的行为动作。<br />
+        </p>
+        <h1>
+          9.css的基本语句构成是?
+        </h1>
+        <p>
+          选择器{属性1:值1;属性2:值2;……}。
+        </p>
+        <h1>
+          10.你做的页面在哪些流览器测试过?这些浏览器的内核分别是什么?
+        </h1>
+        <p>
+          Ie(Ie内核);火狐（Gecko）;谷歌（webkit）;opear(Presto)。
+        </p>
+        <h1>
+          11.写出几种IE6 BUG的解决方法
+        </h1>
+        <p>
+          ①.双边距BUG:float引起的，使用display <br />
+          ②.3像素问题:使用float引起的，使用dislpay:inline -3px<br />
+          ③.超链接hover点击后失效:使用正确的书写顺序 link visited hover active<br />
+          ④.Ie z-index问题:给父级添加position:relative<br />
+          ⑤.Png 透明:使用js代码修改<br />
+          ⑥.Min-height最小高度:使用！Important 解决<br />
+          ⑦.select在ie6下遮盖:使用iframe嵌套<br />
+          ⑧.为什么没有办法定义1px左右的宽度容器:（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）<br />
+        </p>
+        <h1>
+          12.img标签上title与alt属性的区别是什么?
+        </h1>
+        <p>
+          alt:此属性的实质作用是图片在无法正确显示的时候起到文本替代的作用,不过在IE6下还起到了title的作用（鼠标放上去后的文字提示），IE的实现方法实际上是错误的。如果想在鼠标滑过时显示提示,应该用title属性。由于错误的引导，很多初学者就在img标签内只加了alt属性。<br />
+          title:鼠标滑过时显示的文字提示，用户体验上很重要。当然不必要所有的img标签都加此属性，比方说logo这样比较重要或者说用户会体验到的图片内容建议一定要加此属性。
+        </p>
+        <h1>
+          13.描述css reset的作用和用途。
+        </h1>
+        <p>
+          在HTML标签在浏览器里有默认的样式，例如 p
+          标签有上下边距，strong标签有字体加粗样式，em标签有字体倾斜样式。不同浏览器的默认样式之间也会有差别，例如ul默认带有缩进的样式，在IE下，它的缩进是通过margin实现的，而Firefox下，它的缩进是由padding实现的。在切换页面的时候，浏览器的默认样式往往会给我们带来麻烦，影响开发效率。所以解决的方法就是一开始就将浏览器的默认样式全部去掉，更准确说就是通过重新定义标签样式。“覆盖”浏览器的CSS默认属性。最最简单的说法就是把浏览器提供的默认样式覆盖掉！这就是CSS
+          reset。<br />
+          因为浏览器的品种很多，每个浏览器的默认样式也是不同的，比如&lt;button&gt;标签，在IE浏览器、Firefox浏览器以及Safari浏览器中的样式都是不同的，所以，通过重置button标签的CSS属性，然后再将它统一定义，就可以产生相同的显示效果。
+        </p>
+        <h1>
+          14.解释css sprites，如何使用?
+        </h1>
+        <p>
+          CSS
+          Sprites在国内很多人叫css精灵，是一种网页图片应用处理方式。它允许你将一个页面涉及到的所有零星图片都包含到一张大图中去，这样一来，当访问该页面时，载入的图片就不会像以前那样一幅一幅地慢慢显示出来了。对于当前网络流行的速度而言，不高于200KB的单张图片的所需载入时间基本是差不多的，所以无需顾忌这个问题。CSS
+          Sprites其实就是把网页中一些背景图片整合到一张图片文件中，再利用CSS的“background-image”，“background-
+          repeat”，“background-position”的组合进行背景定位，background-position可以用数字精确的定位出背景图片的位置。
+        </p>
+        <h1>
+          15.浏览器标准模式和怪异模式之间的区别是什么?
+        </h1>
+        <p>
+          所谓的标准模式是指，浏览器按W3C标准解析执行代码；怪异模式则是使用浏览器自己的方式解析执行代码，因为不同浏览器解析执行的方式不一样，所以我们称之为怪异模式。浏览器解析时到底使用标准模式还是怪异模式，与你网页中的DTD声明直接相关，DTD声明定义了标准文档的类型（标准模式解析）文档类型，会使浏览器使用相应的方式加载网页并显示，忽略DTD声明,将使网页进入怪异模式(quirks
+          mode)。标准模式与怪异模式差别很大，主要体现在对盒子模型的渲染模式的不同。
+        </p>
+        <h1>
+          16.你如何对网站的文件和资源进行优化?期待的解决方案包括哪些?
+        </h1>
+        <p>
+          解决方案包括：
+          ①.文件合并；
+          ②.文件最小化/文件压缩；
+          ③.使用CDN托管；
+          ④.缓存的使用。
+        </p>
+        <h1>
+          17.什么是语义化的HTML?
+        </h1>
+        <p>
+          “语义化”指的是机器在需要更少的人类干预的情况下能够研究和收集信息，让网页能够被机器理解，最终让人类受益。HTML标签语义化是让大家直观的认识标签(markup)和属性(attribute)的用途和作用。语义化的网页的好处，最主要的就是对搜索引擎友好，有了良好的结构和语义你的网页内容自然容易被搜索引擎抓取。
+        </p>
+        <h1>
+          18.清除浮动的几种方式，各自的优缺点
+        </h1>
+        <p>
+          ①.使用空标签清除浮动 clear:both（理论上能清楚任何标签，但增加无意义的标签）。 <br />
+          ②.使用overflow:auto（空标签元素清除浮动而不得不增加无意代码的弊端,,使用zoom:1用于兼容IE）。 <br />
+          ③.使用afert伪元素清除浮动(用于非IE浏览器)。 <br />
+        </p>
+        <h1>
+          19.如何用CSS分别单独定义IE6、7、8的width属性?
+        </h1>
+        <p>
+          ①.所有浏览器通用<br />
+          height: 100px; <br />
+          ②.IE6专用<br />
+          _height: 100px; 或 *height: 100px; <br />
+          ③.IE7专用<br />
+          *+height: 100px;<br />
+          ④.IE7、FF共用<br />
+          height: 100px !important; <br />
+        </p>
+        <h1>
+          20.谈谈以前端角度出发做好SEO需要考虑什么
+        </h1>
+        <p>
+          ①.了解搜索引擎如何抓取网页和如何索引网页；<br />
+          ②.Meta标签优化；<br />
+          ③.如何选取关键词并在网页中放置关键词；<br />
+          ④.了解主要的搜索引擎；<br />
+          ⑤.主要的互联网目录；<br />
+          ⑥.按点击付费的搜索引擎；<br />
+          ⑦.搜索引擎登录；<br />
+          ⑧.链接交换和链接广泛度；<br />
+          ⑨.标签的合理使用。<br />
+        </p>
+        <h1>
+          21.你的前端技术在哪学的？
+        </h1>
+      </div>
+    </div>
+    <div class="line"></div>
+  </div>
+</body>
+
+</html>

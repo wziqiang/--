@@ -1,0 +1,68 @@
+Ant Design Vue
+https://1x.antdv.com/components/icon-cn/ 我们用的是这个版本
+https://www.antdv.com/components/overview-cn/
+https://vuetifyjs.com/en/components/inputs/#hide-details
+http://vue.awesometiny.com/
+
+echar图库直接抄
+https://madeapie.com/#/
+
+element
+https://element.eleme.cn/#/zh-CN
+https://element.eleme.cn/#/zh-CN/component/icon
+
+
+
+https://raw.fastgit.org/freefq/free/master/v2
+高性能组件 Surely Vue
+https://www.surely.cool/
+
+//文档查阅mdn
+https://developer.mozilla.org/zh-CN/
+webapi官方文档
+https://developer.mozilla.org/zh-CN/
+
+vue官网
+https://v3.cn.vuejs.org/
+
+// 去除白底
+https://www.aigei.com/bgremover
+
+简单的样式
+https://purecss.io/
+https://bulma.io/documentation/elements/block/
+https://www.openzui.com/#/
+https://semantic-ui.com/modules/sidebar.html
+
+
+
+echarts可视化图表库
+https://echarts.apache.org/zh/index.html
+
+稀土掘金
+https://juejin.cn/
+
+解析、验证、操作、并在 JavaScript 中显示日期和时间。
+https://momentjs.com/
+
+在线将图片生成SVG格式文件
+https://www.bejson.com/convert/image_to_svg/
+
+动画弹出
+https://animate.style/
+
+蚂蚁集团全新一代数据可视化解决方案
+https://antv.gitee.io/zh
+
+http://111.22.7.195:11000/
+http://redmine.9chapter.cn:7016
+http://qb.9chapter.cn/
+
+https://knnxnt6slg.feishu.cn/docs/doccnKrE6tZVCsFHz3NlaaPb8sP#
+
+https://www.linkedin.com/in/innovationews
+
+
+
+stack Overflow
+http://218.77.58.16:8086/28982855edea11ec9ebd8cec4b9e5818.mp4

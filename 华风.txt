@@ -1,0 +1,79 @@
+192.168.0.195 root huafengdata@123 22  /usr/local/nginx/html
+				/usr/local/nginx-1.18.0/html
+
+MQTTX https://mqttx.app/zh
+
+测试环境演示账号：
+边缘：test1\test2  
+ 云平台：demo 
+ 智慧用电：使用边缘系统账号，数据库使用的是边缘系统
+
+密码都是123456
+
+案例地址：http://www.hotent.org:8880/chanzhi/index.php/book/EIPSAAS-2020/matrixManager-136.html
+
+云平台和配电平台要去192.168.0.20虚拟机去部署
+scp -r mvue.zip 192.168.0.20:/usr/local/nginx/html  传送
+unzip mvue.zip 解压zip
+mv fvue fvue0619 重命名
+rm fvue.zip 删除
+
+wuziqiang 密码wuziqiang git仓库
+ git checkout 
+看后端日志 cd /usr/local/cwd_eip/eip_gw   tail -f nohup.out  
+                  tail -f usr/local/cwd_eip/eip_gw/nohup.out
+
+admin    huafengdata@123  198 203 569 lmpYDX  远程控制向日葵 中车内网
+
+wuziqiang 密码wuziqiang123  svn账号和密码
+http://39.104.117.79:8081/svn/projects/hf-application-platform/HF-ZZZC/Document/13-验收文档/一期验收/系统测试/03 中车测试用例.xls
+
+http://39.104.117.79:8081/svn/projects/hf-application-platform/HF-ZZZC
+
+这个页面你们是不是改过，现在多没数据展示还报错
+
+用电报表 electricityConsumptionReport
+电能集抄 powerCollection
+分时段用电  powerConsumption
+线路损耗 lineLoss
+同比分析 yearAnalysis
+环比分析 sequentialAnalysis
+
+电力参数查询 powerParameters
+电力运行报表 powerOperationReport
+电力极值报表 powerExtremum
+电力整点集抄 powerPointCentralized
+电度量报表 electricityMeasurement
+最大需量报表 maxDemandReport
+谐波查询 harmonicQuery
+
+变配电面板 distributionBoard
+配电图 powerDistributionDiagram
+电气柜监测 electricGasCabinet
+变压器监测 transformer
+线缆温度监测 cableTemperature
+漏电监测 leakageMonitoring
+
+巡检计划 inspectionPlan
+巡检记录 inspectionRecord
+缺陷记录 defectRecord
+
+环境监测 environmentalMonitoring
+通讯状态 communicationStatus
+
+遥信事件 letterEvent
+遥测事件 telemetryEvent
+运行事件 runEvent
+报警信息 alarmInformation
+报警分析 alarmAnalysis  
+
+隐患查询 hiddenTroubleQuery
+隐患派发 hiddenDangerDistribution
+隐患处理 hiddenDangerTreatment
+
+控制操作日志 controlOperation
+
+
+用户报告 eUserReport
+
+健康管理 healthInterface
