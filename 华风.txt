@@ -23,7 +23,7 @@ wuziqiang 密码wuziqiang git仓库
 看后端日志 cd /usr/local/cwd_eip/eip_gw   tail -f nohup.out  
                   tail -f usr/local/cwd_eip/eip_gw/nohup.out
 
-admin    huafengdata@123  198 203 569 lmpYDX  远程控制向日葵 中车内网
+admin    huafengdata@123  198 203 569 JE65NH 远程控制向日葵 中车内网
 
 wuziqiang 密码wuziqiang123  svn账号和密码
 http://39.104.117.79:8081/svn/projects/hf-application-platform/HF-ZZZC/Document/13-验收文档/一期验收/系统测试/03 中车测试用例.xls
