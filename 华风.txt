@@ -3,12 +3,29 @@
 
 MQTTX https://mqttx.app/zh
 
+hzy:
+数据库：
+39.104.117.79
+windprod
+windpowerdb
+/usr/local/nginx/html
+root HU@FENG@333
+
+mstsc 
+123.182.60.69:4001       (192.168.0.12)
+administrator/Hf@2021zjk
+
+axure 输出原型图
+khxqfxpt@123
+
 测试环境演示账号：
 边缘：test1\test2  
  云平台：demo 
  智慧用电：使用边缘系统账号，数据库使用的是边缘系统
 
 密码都是123456
+
+宏天文档 http://www.hotent.org:8880/chanzhi/index.php/book-searchfront.html
 
 案例地址：http://www.hotent.org:8880/chanzhi/index.php/book/EIPSAAS-2020/matrixManager-136.html
 
