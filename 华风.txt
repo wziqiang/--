@@ -15,6 +15,9 @@ mstsc
 123.182.60.69:4001       (192.168.0.12)
 administrator/Hf@2021zjk
 
+mstsc /admin /v:192.168.0.50
+administrator huafengdata@123
+
 axure 输出原型图
 khxqfxpt@123
 
@@ -28,6 +31,16 @@ khxqfxpt@123
 宏天文档 http://www.hotent.org:8880/chanzhi/index.php/book-searchfront.html
 
 案例地址：http://www.hotent.org:8880/chanzhi/index.php/book/EIPSAAS-2020/matrixManager-136.html
+
+大佬自己静态网页
+https://xiejiahao.gitee.io/front-end-navigation/
+
+好用的功能
+https://www.baidufe.com/fehelper/feedback.html
+
+张家口外部地址
+http://www.zjk-gffp.cn:8280/fvue
+http://www.zjk-gffp.cn:8280/map/#/login
 
 云平台和配电平台要去192.168.0.20虚拟机去部署
 scp -r mvue.zip 192.168.0.20:/usr/local/nginx/html  传送
@@ -47,50 +60,5 @@ http://39.104.117.79:8081/svn/projects/hf-application-platform/HF-ZZZC/Document/
 
 http://39.104.117.79:8081/svn/projects/hf-application-platform/HF-ZZZC
 
-这个页面你们是不是改过，现在多没数据展示还报错
-
-用电报表 electricityConsumptionReport
-电能集抄 powerCollection
-分时段用电  powerConsumption
-线路损耗 lineLoss
-同比分析 yearAnalysis
-环比分析 sequentialAnalysis
-
-电力参数查询 powerParameters
-电力运行报表 powerOperationReport
-电力极值报表 powerExtremum
-电力整点集抄 powerPointCentralized
-电度量报表 electricityMeasurement
-最大需量报表 maxDemandReport
-谐波查询 harmonicQuery
-
-变配电面板 distributionBoard
-配电图 powerDistributionDiagram
-电气柜监测 electricGasCabinet
-变压器监测 transformer
-线缆温度监测 cableTemperature
-漏电监测 leakageMonitoring
-
-巡检计划 inspectionPlan
-巡检记录 inspectionRecord
-缺陷记录 defectRecord
-
-环境监测 environmentalMonitoring
-通讯状态 communicationStatus
-
-遥信事件 letterEvent
-遥测事件 telemetryEvent
-运行事件 runEvent
-报警信息 alarmInformation
-报警分析 alarmAnalysis  
-
-隐患查询 hiddenTroubleQuery
-隐患派发 hiddenDangerDistribution
-隐患处理 hiddenDangerTreatment
-
-控制操作日志 controlOperation
 
 
-用户报告 eUserReport
-
-健康管理 healthInterface
